@@ -46,6 +46,7 @@ if (navigator.geolocation) {
 let markerCount = 0;
 
 form.addEventListener("submit", (e) => {
+  e.preventDefault()
   markerCount++;
   const { lat, lng } = mapE.latlng;
   L.marker([lat, lng])
@@ -61,7 +62,8 @@ form.addEventListener("submit", (e) => {
     .openPopup();
 });
 
-inputType.addEventListener("change", function () {
+inputType.addEventListener("change", function (e) {
+  e.preventDefault()
   inputElevation
     .closest(".form__row")
     .classList.toggle("form__row--hidden");
