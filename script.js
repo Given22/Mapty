@@ -54,12 +54,14 @@ class Cycling extends Workout {
   constructor(coords, distance, duration, elevationGain, type) {
     super(coords, distance, duration, type);
     this.elevationGain = elevationGain;
-    this.calcSpeed();
+    this.calcSpeed(this.distance, this.duration);
   }
 
-  calcSpeed() {
-    this.speed = this.distance / (this.duration / 60);
+  calcSpeed(distance, duration) {
+    this.speed = distance / (duration / 60);
+    console.log(this.speed);
     this.speed = this.speed || 0;
+    console.log("test");
     return this.speed;
   }
 }
@@ -68,6 +70,7 @@ class App {
   #map;
   #mapE;
   #workouts = [];
+  #points = [];
 
   constructor() {
     this._getPosition();
@@ -131,11 +134,13 @@ class App {
     this._checkToAddRemoveAll();
   }
 
-  _newWorkout() {
-    
+  _newWorkout(e) {
+    e.preventDefault();
     let type = inputType.value;
     let distance = +inputDistance.value;
     let duration = +inputDuration.value;
+
+    console.log(distance, duration, type);
 
     let validInput = (...inputs) =>
       inputs.every((input) => Number.isFinite(input));
@@ -144,14 +149,19 @@ class App {
     if (!validInput(distance, duration) || !positiveInput(distance, duration)) {
       alert("Wrong input");
     } else {
-      if (type === "running" ) {
+      if (type === "running" && validInput(+inputCadence.value) && positiveInput(+inputCadence.value)) {
         const cadence = +inputCadence.value;
+        console.log(distance, duration);
         this.#workouts.push(
           new Running(this.#mapE.latlng, distance, duration, cadence, type)
         );
         this._renderLastWorkout();
-      } else if (type === "cycling" ) {
+      } 
+      else if (type === "cycling" && validInput(+inputElevation.value) && positiveInput(+inputElevation.value)) 
+      {
         const elevationGain = +inputElevation.value;
+        console.log(distance, duration);
+        console.log("test");
         this.#workouts.push(
           new Cycling(
             this.#mapE.latlng,
@@ -162,21 +172,28 @@ class App {
           )
         );
         this._renderLastWorkout();
-      } else {
+      } 
+      else {
         alert("Wrong input");
       }
-    }
+    
     inputElevation.value =
       inputCadence.value =
       inputDistance.value =
       inputDuration.value =
         "";
+      }
+  }
+  
+
+  _addPoint(p) {
+    this.#points.push(p);
   }
 
   _renderWorkoutMarkerOnStart(workout) {
     const { lat, lng } = workout.coords;
     let date = new Date(workout.date);
-    L.marker([lat, lng])
+    const marker = L.marker([lat, lng])
       .addTo(this.#map)
       .bindPopup(
         L.popup({
@@ -190,12 +207,14 @@ class App {
           workout.type[0].toUpperCase() + workout.type.substring(1)
         } on ${months[date.getMonth()]} ${date.getDate()}`
       );
+
+    this._addPoint(marker);
   }
 
   _renderWorkoutMarker(workout) {
     const { lat, lng } = workout.coords;
     let date = new Date(workout.date);
-    L.marker([lat, lng])
+    const marker = L.marker([lat, lng])
       .addTo(this.#map)
       .bindPopup(
         L.popup({
@@ -210,6 +229,17 @@ class App {
         } on ${months[date.getMonth()]} ${date.getDate()}`
       )
       .openPopup();
+
+    this._addPoint(marker);
+  }
+
+  _removeMarker(workout) {
+    const wCoords = workout.coords;
+    this.#points.forEach((p) => {
+      if (p._latlng.lat === wCoords.lat && p._latlng.lng === wCoords.lng) {
+        this.#map.removeLayer(p);
+      }
+    });
   }
 
   _renderWorkout(workout) {
@@ -243,9 +273,7 @@ class App {
         <div class="workout__details">
           <span class="workout__icon">⚡️</span>
           <span class="workout__value">${
-            workout.type === "running"
-              ? workout.pace.toFixed(1)
-              : workout.speed.toFixed(1)
+            workout.type === "running" ? workout.pace : workout.speed
           }</span>
           <span class="workout__unit">${
             workout.type === "running" ? "min/km" : "km/h"
@@ -285,6 +313,9 @@ class App {
   _removeWorkouts() {
     this.#workouts = [];
     this._reloadWorkouts();
+    this.#points.forEach((p) => {
+      this.#map.removeLayer(p);
+    });
     this._setLocalStorage();
   }
 
@@ -308,17 +339,17 @@ class App {
     this._renderWorkouts();
   }
 
-  // reset() {
-  //   localStorage.removeItem("workouts");
-  //   location.reload();
-  // }
+  reset() {
+    localStorage.removeItem("workouts");
+    location.reload();
+  }
 
   _removeWorkout(id) {
     const index = this.#workouts.findIndex((work) => work.id === id);
+    this._removeMarker(this.#workouts[index]);
     this.#workouts.splice(index, 1);
     localStorage.removeItem(`workouts[${index}]`);
   }
-
 
   _menu(e) {
     if (!e.target.closest(".workouts")) return;
@@ -381,7 +412,7 @@ class App {
     } else {
       this.#workouts[index].elevationGain = third;
       this.#workouts[index].speed =
-      this.#workouts[index].distance / (this.#workouts[index].duration / 60);
+        this.#workouts[index].distance / (this.#workouts[index].duration / 60);
       this.#workouts[index].speed = this.#workouts[index].speed || 0;
     }
   }
@@ -479,9 +510,13 @@ class App {
   _closeCard(e) {
     e.remove();
   }
-  
+
   printWorkouts() {
-    console.log(this.#workouts)
+    console.log(this.#workouts);
+  }
+
+  printPoints() {
+    console.log(this.#points);
   }
 }
 
@@ -491,7 +526,7 @@ const mapty = new App();
 
 // Ability to delete a workout ✅
 
-// Ability to delete all workouts 
+// Ability to delete all workouts ✅
 
 // Ability to sort workouts byacertain field (e.g. distance)
 
