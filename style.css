@@ -28,7 +28,7 @@ body {
   height: 100vh;
   overscroll-behavior-y: none;
 
-  background-color: #fff;
+  background-color: var(--color-dark--2);
   padding: 2.5rem;
 
   display: flex;
@@ -47,6 +47,7 @@ a:visited {
   padding: 3rem 5rem 4rem 5rem;
   display: flex;
   flex-direction: column;
+  max-width: 40vw;
 }
 
 .logo {
@@ -71,12 +72,40 @@ a:visited {
   border-radius: 5px;
   padding: 1.5rem 2.25rem;
   margin-bottom: 1.75rem;
-  cursor: pointer;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.75rem 1.5rem;
+  display: flex;
+  flex-direction: column
 }
+
+.workout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.workout__buttons {
+  display: flex;
+  gap: 0.5rem;
+  color : var(--color-light--2);
+  flex-wrap: wrap;
+}
+
+.workout__button {
+  font-size: 1rem;
+  width: 2rem;
+  color: transparent;  
+  text-shadow: 0 0 0 var(--color-light--1);
+  text-align: right;
+  cursor: pointer;
+}
+
 .workout--running {
   border-left: 5px solid var(--color-brand--2);
 }
@@ -113,6 +142,37 @@ a:visited {
   font-weight: 800;
 }
 
+.edit__form {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  /* Match height and activity boxes */
+  height: 15.25rem;
+  transition: all 0.5s, transform 1ms;
+}
+
+.edit__form__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+}
+
+.edit__button {
+  font-size: 1rem;
+  width: 2rem;
+  color: transparent;  
+  text-shadow: 0 0 0 var(--color-light--1);
+  text-align: right;
+  cursor: pointer;
+}
+
+
 .form {
   background-color: var(--color-dark--2);
   border-radius: 5px;
@@ -124,7 +184,7 @@ a:visited {
   gap: 0.5rem 2.5rem;
 
   /* Match height and activity boxes */
-  height: 9.25rem;
+  height: 15.25rem;
   transition: all 0.5s, transform 1ms;
 }
 
@@ -139,6 +199,8 @@ a:visited {
 .form__row {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .form__row--hidden {
@@ -146,7 +208,6 @@ a:visited {
 }
 
 .form__label {
-  flex: 0 0 50%;
   font-size: 1.5rem;
   font-weight: 600;
 }
