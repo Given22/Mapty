@@ -87,6 +87,8 @@ class App {
     containerWorkouts.addEventListener("click", this._menu.bind(this));
 
     menuBtn.addEventListener("click", this._toggleMenu.bind(this));
+    
+    document.querySelector(".menu__show__pins__btn").addEventListener("click", this._showAllPins.bind(this));
 
     this._getLocalStorage();
 
@@ -587,9 +589,9 @@ class App {
     console.log(this.#points);
   }
   
-  showAll(){
+  _showAllPins(){
     const group = new L.featureGroup(this.#points);
-    this.#map.fitBounds(group.getBounds().pad(0.1));
+    this.#map.fitBounds(group.getBounds().pad(0.5));
   }
 }
 
@@ -605,7 +607,7 @@ const mapty = new App();
 
 // Re-build Running and Cycling objects coming from Local Storage ✅
 
-// Ability to position the map to show all workouts[very hard]
+// Ability to position the map to show all workouts[very hard] ✅
 
 // Ability to draw lines and shapes instead of just points[very hard]
 

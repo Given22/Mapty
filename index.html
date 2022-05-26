@@ -41,24 +41,29 @@
           <h2>Ⓜ️Ⓜ️Ⓜ️</h2>
         </menu>
         <menuForm class="menu__form hidden">
-          <div class="menu__row">
-            <label class="menu__label">Sorting by</label>
-            <select class="menu__input menu__input--sorting">
-              <option value="date" data-dest=1 >Last</option>
-              <option value="date" data-dest=0 >Oldest</option>
-              <option value="distance" data-dest=1 >Distance ↗️ </option>
-              <option value="distance" data-dest=0 >Distance ↘️ </option>
-              <option value="duration" data-dest=1 >Duration ↗️ </option>
-              <option value="duration" data-dest=0 >Duration ↘️ </option>
-            </select>
+          <div class="menu__form__container">
+            <div class="menu__row">
+              <label class="menu__label">Sorting by</label>
+              <select class="menu__input menu__input--sorting">
+                <option value="date" data-dest=1 >Last</option>
+                <option value="date" data-dest=0 >Oldest</option>
+                <option value="distance" data-dest=1 >Distance ↗️ </option>
+                <option value="distance" data-dest=0 >Distance ↘️ </option>
+                <option value="duration" data-dest=1 >Duration ↗️ </option>
+                <option value="duration" data-dest=0 >Duration ↘️ </option>
+              </select>
+            </div>
+            <div class="menu__row">
+              <label class="menu__label">Type</label>
+              <select class="menu__input menu__input--type">
+                <option value="all">All</option>
+                <option value="running">Running</option>
+                <option value="cycling">Cycling</option>
+              </select>
+            </div>
           </div>
           <div class="menu__row">
-            <label class="menu__label">Type</label>
-            <select class="menu__input menu__input--type">
-              <option value="all">All</option>
-              <option value="running">Running</option>
-              <option value="cycling">Cycling</option>
-            </select>
+            <h2 class="menu__show__pins__btn"><span>Show All Pins on Map</span></>
           </div>
         </menuForm>
         <form class="form hidden">

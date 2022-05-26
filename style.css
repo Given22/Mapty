@@ -93,7 +93,7 @@ header {
   margin-bottom: 1.75rem;
   gap: 1.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   
   transition: all 0.5s, transform 1ms;
@@ -107,6 +107,25 @@ header {
   opacity: 0;
   
   transition: all 0.5s, transform 1ms;
+}
+
+.menu__form__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu__show__pins__btn:hover {
+  color: var(--color-light--1);
+  font-size: 1.5rem;
+}
+
+.menu__show__pins__btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .menu__row {
@@ -193,6 +212,11 @@ header {
   text-shadow: 0 0 0 var(--color-light--1);
   text-align: right;
   cursor: pointer;
+}
+
+.workout__button:hover{
+  color: transparent;
+  text-shadow: 0 0 0 var(--color-light--2);
 }
 
 .workout--running {
