@@ -31,9 +31,36 @@
   </head>
   <body>
     <div class="sidebar">
-      <img src="logo.png" alt="Logo" class="logo" />
-
+      <!-- <img src="logo.png" alt="Logo" class="logo" /> -->
+      <header>
+        <img src="logo_2.png" alt="Logo" class="logo" />
+        <h1 class="title">Mapty</h1>
+      </header>
       <ul class="workouts">
+        <menu class="menu">
+          <h2>Ⓜ️Ⓜ️Ⓜ️</h2>
+        </menu>
+        <menuForm class="menu__form hidden">
+          <div class="menu__row">
+            <label class="menu__label">Sorting by</label>
+            <select class="menu__input menu__input--sorting">
+              <option value="date" data-dest=1 >Last</option>
+              <option value="date" data-dest=0 >Oldest</option>
+              <option value="distance" data-dest=1 >Distance ↗️ </option>
+              <option value="distance" data-dest=0 >Distance ↘️ </option>
+              <option value="duration" data-dest=1 >Duration ↗️ </option>
+              <option value="duration" data-dest=0 >Duration ↘️ </option>
+            </select>
+          </div>
+          <div class="menu__row">
+            <label class="menu__label">Type</label>
+            <select class="menu__input menu__input--type">
+              <option value="all">All</option>
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+        </menuForm>
         <form class="form hidden">
           <div class="form__row">
             <label class="form__label">Type</label>

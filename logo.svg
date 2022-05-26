@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="0.78127806"
+     inkscape:cx="232.95163"
+     inkscape:cy="538.86065"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="102.27366,149.68529"
+       orientation="1,0"
+       id="guide221"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="3.0478905,148.33067"
+       orientation="0,-1"
+       id="guide223"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="powermask"
+       id="path-effect362"
+       is_visible="true"
+       lpeversion="1"
+       uri="#mask-powermask-path-effect362"
+       invert="false"
+       hide_mask="false"
+       background="true"
+       background_color="#ffffffff" />
+    <filter
+       id="mask-powermask-path-effect343_inverse"
+       inkscape:label="filtermask-powermask-path-effect343"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect343_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect343_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask-powermask-path-effect362">
+      <path
+         id="mask-powermask-path-effect362_box"
+         style="fill:#ffffff;fill-opacity:1"
+         d="M 49.438976,95.817623 H 155.06725 V 201.4459 H 49.438976 Z" />
+      <circle
+         style="fill:#000000;stroke-width:0.264583"
+         id="circle360"
+         cx="102.13177"
+         cy="148.3485"
+         r="16.283613"
+         d="M 118.41538,148.3485 A 16.283613,16.283613 0 0 1 102.13177,164.63211 16.283613,16.283613 0 0 1 85.848154,148.3485 16.283613,16.283613 0 0 1 102.13177,132.06488 16.283613,16.283613 0 0 1 118.41538,148.3485 Z" />
+    </mask>
+    <filter
+       id="mask-powermask-path-effect362_inverse"
+       inkscape:label="filtermask-powermask-path-effect362"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect362_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect362_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#14a914;stroke-width:0.264583;fill-opacity:1"
+       id="path227"
+       mask="url(#mask-powermask-path-effect362)"
+       d="M 154.06725,148.63176 A 51.814137,51.814137 0 0 1 102.25311,200.4459 51.814137,51.814137 0 0 1 50.438976,148.63176 51.814137,51.814137 0 0 1 102.25311,96.817623 51.814137,51.814137 0 0 1 154.06725,148.63176 Z"
+       sodipodi:type="arc"
+       sodipodi:ry="51.814137"
+       sodipodi:rx="51.814137"
+       sodipodi:cy="148.63176"
+       sodipodi:cx="102.25311"
+       inkscape:path-effect="#path-effect362" />
+    <path
+       style="fill:#14a914;stroke-width:0.264583;fill-opacity:1"
+       d="m 56.435141,172.77018 45.838889,88.75194 46.94627,-91.03247 z"
+       id="path577"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#14a914;fill-opacity:1;stroke-width:0.264583"
+       d="m 102.10433,54.015393 c 0,0 -49.25792,38.78477 -51.306155,93.807297 -0.221378,5.94695 26.923033,-0.16933 26.923033,-0.16933 l 16.594071,-22.68985 43.517101,-2.20125 -19.98061,-18.87999 c 0,0 4.96553,-4.69004 -7.78906,-6.434436 -8.30571,-1.13594 -16.594069,-1.439283 -7.95838,-43.432441 z"
+       id="path1360"
+       sodipodi:nodetypes="csccccsc" />
+  </g>
+</svg>
