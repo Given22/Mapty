@@ -89,7 +89,6 @@ class App {
     menuBtn.addEventListener("click", this._toggleMenu.bind(this));
     
     document.querySelector(".menu__show__pins__btn").addEventListener("click", this._showAllPins.bind(this));
-
     this._getLocalStorage();
 
     this._checkToAddRemoveAll(this.#workouts);
