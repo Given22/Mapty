@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
 
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,
+        width=device-width"
+    />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin=""
-    />
+      crossorigin=""/>
     <script
-      defer
-      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-      crossorigin=""
+    defer
+    src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""
     ></script>
 
     <link rel="stylesheet" href="style.css" />
@@ -45,12 +49,12 @@
             <div class="menu__row">
               <label class="menu__label">Sorting by</label>
               <select class="menu__input menu__input--sorting">
-                <option value="date" data-dest=1 >Last</option>
-                <option value="date" data-dest=0 >Oldest</option>
-                <option value="distance" data-dest=1 >Distance ↗️ </option>
-                <option value="distance" data-dest=0 >Distance ↘️ </option>
-                <option value="duration" data-dest=1 >Duration ↗️ </option>
-                <option value="duration" data-dest=0 >Duration ↘️ </option>
+                <option value="date" data-dest="1">Last</option>
+                <option value="date" data-dest="0">Oldest</option>
+                <option value="distance" data-dest="1">Distance ↗️</option>
+                <option value="distance" data-dest="0">Distance ↘️</option>
+                <option value="duration" data-dest="1">Duration ↗️</option>
+                <option value="duration" data-dest="0">Duration ↘️</option>
               </select>
             </div>
             <div class="menu__row">
@@ -63,7 +67,9 @@
             </div>
           </div>
           <div class="menu__row">
-            <h2 class="menu__show__pins__btn"><span>Show All Pins on Map</span></>
+            <h2 class="menu__show__pins__btn">
+              <span>Show All Pins on Map</span>
+            </h2>
           </div>
         </menuForm>
         <form class="form hidden">
