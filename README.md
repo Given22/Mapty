@@ -11,7 +11,7 @@
   
 ## Live
 
-  https://github.com/Given22/Mapty
+  https://mapty-damian-s.netlify.app
 
 ## Technologies
   
